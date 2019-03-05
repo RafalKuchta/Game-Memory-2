@@ -15,7 +15,8 @@ header button.btn {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0 auto;
-    padding: 5px 30px;
+    padding-left:30px;
+    padding-right:30px;
     font-size: 30px;
     text-transform: uppercase;
 }
@@ -45,9 +46,9 @@ section div {
 
     header button.btn {
         display: block;
-        margin: 20px auto;
-        padding: 10px 80px;
-        font-size: 30px;
+        padding-left:40px;
+        padding-right:40px;
+        font-size: 1rem;
     }
 }
 
