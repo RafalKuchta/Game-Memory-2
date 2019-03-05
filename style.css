@@ -41,14 +41,14 @@ section div {
     }
     header {
         display: block;
-        height: 90vh;
+        height: 10vh;
     }
 
     header button.btn {
         display: block;
         padding-left:40px;
         padding-right:40px;
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 }
 
