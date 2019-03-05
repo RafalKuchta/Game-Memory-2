@@ -1,11 +1,15 @@
 const cardsClass = ["red", "red", "green", "green", "blue", "blue", "violet", "violet", "brown", "brown", "aqua", "aqua", "chartreuse", "chartreuse", "salmon", "salmon", "lightskyblue", "lightskyblue"];
 
 let cards = document.querySelectorAll("div");
+document.querySelector("button").addEventListener("click", ()=> location.reload())
+
+const startTime = new Date().getTime();
 
 cards = [...cards];
 let activeCard = "";
 const activeCards = [];
 let resultGame = "";
+let resultGames = cards.length/2;
 
 const clickCard = function(){
     activeCard = this;
@@ -22,6 +26,12 @@ const clickCard = function(){
         if(activeCards[0].className === activeCards[1].className){
             activeCards.forEach(card => card.classList.add("off"));
             cards = cards.filter(card => !card.classList.contains("off"))
+            resultGame++;
+            if(resultGame === resultGames){
+                const finishtTime = new Date().getTime();
+                const end = (finishtTime - startTime) / 1000;
+                alert(`Udało się, twój wynik to: ${end} sekund`)
+            }
 
          } else {
             activeCards.forEach(card => card.classList.add('hidden'));
@@ -30,12 +40,11 @@ const clickCard = function(){
         }
         activeCard = "";
         activeCards.length = 0;
-        resultGame++;
         cards.forEach(card => card.addEventListener('click', clickCard))
     }, 500)
 
     }
-    console.log(resultGame)
+    console.log(resultGame, resultGames)
 }
 
 const init = function(){
