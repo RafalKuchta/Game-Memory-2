@@ -29,7 +29,7 @@ const clickCard = function () {
         setTimeout(() => {
             if (activeCards[0].className === activeCards[1].className) {
                 activeCards.forEach(card => card.classList.add('off'));
-                cards = cards.filter(card => !card.classList.contains("off))
+                cards = cards.filter(card => !card.classList.contains("off"));
                 gameResult++;
                 console.log("wygrana", cards);
                 if (gameResult === finishGame) {
