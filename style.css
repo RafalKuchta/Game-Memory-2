@@ -5,21 +5,25 @@
 }
 
 header {
-    display: block;
-    height: 50px;
+   position: relative;
+    height: 10vh;
 }
 
 header button.btn {
-    display: block;
-    margin: 10px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
     padding: 5px 30px;
+    font-size: 30px;
+    text-transform: uppercase;
 }
 
 section {
     display: flex;
     flex-wrap: wrap;
-    align-content: stretch;
-    height: 93vh;
+    height: 90vh;
     width: 100%;
 }
 
