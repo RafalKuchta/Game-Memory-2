@@ -23,24 +23,20 @@ const clickCard = function () {
 
     else {
         activeCards[1] = activeCard;
-        activeCards.forEach(card => card.classList.remove("hidden"));
         cards.forEach(card => card.removeEventListener('click', clickCard));
         setTimeout(() => {
             if (activeCards[0].className === activeCards[1].className) {
                 activeCards.forEach(card => card.classList.add('off'));
                 cards = cards.filter(card => !card.classList.contains("off"));
                 gameResult++;
-                console.log("wygrana", cards);
-                if (gameResult === finishGame) {
-                    clearInterval(idI)
-                }
+                if (gameResult === finishGame) return clearInterval(idI)
+     
             } else {
                 activeCards.forEach(card => card.classList.add('hidden'));
-                console.log("przegrana")
             }
-    activeCards.length = 0;
-    activeCard = '';
-    cards.forEach(card => card.addEventListener('click', clickCard));
+              activeCards.length = 0;
+              activeCard = '';
+              cards.forEach(card => card.addEventListener('click', clickCard));
         }, 500);
 
     }
