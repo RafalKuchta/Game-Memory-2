@@ -11,14 +11,13 @@ const finishGame = cards.length / 2;
 
 const clickCard = function () {
     activeCard = this;
-    cards = cards.filter(card => !card.classList.contains('off'));
 
-    if (activeCards[0] === activeCard) return
+    if (activeCards[0] === activeCard) return;
+      activeCards.forEach(card => card.classList.remove("hidden"));
 
     //1 kliknięcie
     if (activeCards.length === 0) {
         activeCards[0] = activeCard;
-        activeCards.forEach(card => card.classList.remove("hidden"));
     }
     //2 kliknięcie
 
