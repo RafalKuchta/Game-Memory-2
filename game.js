@@ -30,21 +30,17 @@ const clickCard = function () {
             if (activeCards[0].className === activeCards[1].className) {
                 activeCards.forEach(card => card.classList.add('off'));
                 gameResult++;
-                activeCards.length = 0;
-                activeCard = '';
-                cards.forEach(card => card.addEventListener('click', clickCard));
                 console.log("wygrana", cards);
                 if (gameResult === finishGame) {
                     clearInterval(idI)
                 }
             } else {
                 activeCards.forEach(card => card.classList.add('hidden'));
-                cards.forEach(card => card.addEventListener('click', clickCard));
-                activeCards.length = 0;
-                activeCard = '';
                 console.log("przegrana")
             }
-
+    activeCards.length = 0;
+    activeCard = '';
+    cards.forEach(card => card.addEventListener('click', clickCard));
         }, 500);
 
     }
