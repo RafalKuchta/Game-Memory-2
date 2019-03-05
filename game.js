@@ -1,84 +1,58 @@
 const cardsClass = ["red", "red", "green", "green", "blue", "blue", "violet", "violet", "brown", "brown", "aqua", "aqua", "chartreuse", "chartreuse", "salmon", "salmon", "lightskyblue", "lightskyblue"];
 
-let cards = document.querySelectorAll('div');
+let cards = document.querySelectorAll("div");
+
 cards = [...cards];
-
 let activeCard = "";
-let activeCards = [];
+const activeCards = [];
+let resultGame = "";
 
-let gameResult = "";
-const finishGame = cards.length / 2;
-
-const clickCard = function () {
+const clickCard = function(){
     activeCard = this;
-
-    if (activeCards[0] === activeCard) return;
-      activeCards.forEach(card => card.classList.remove("hidden"));
-
-    //1 kliknięcie
-    if (activeCards.length === 0) {
-        activeCards[0] = activeCard;
-    }
-    //2 kliknięcie
-
-    else {
+    if(activeCards[0] === activeCard) return;
+    activeCard.classList.remove('hidden');
+    
+    if(activeCards.length === 0){
+        activeCards[0] = activeCard
+    } else {
+        //2 kliknięcie
         activeCards[1] = activeCard;
-        cards.forEach(card => card.removeEventListener('click', clickCard));
-        setTimeout(() => {
-            if (activeCards[0].className === activeCards[1].className) {
-                activeCards.forEach(card => card.classList.add('off'));
-                cards = cards.filter(card => !card.classList.contains("off"));
-                gameResult++;
-                     
-            } else {
-                activeCards.forEach(card => card.classList.add('hidden'));
-            }
-              activeCards.length = 0;
-              activeCard = '';
-              cards.forEach(card => card.addEventListener('click', clickCard));
-        }, 500);
+        cards.forEach(card => card.removeEventListener('click', clickCard))
+        setTimeout(()=> {
+        if(activeCards[0].className === activeCards[1].className){
+            activeCards.forEach(card => card.classList.add("off"));
+            cards = cards.filter(card => !card.classList.contains("off"))
+
+         } else {
+            activeCards.forEach(card => card.classList.add('hidden'));
+
+
+        }
+        activeCard = "";
+        activeCards.length = 0;
+        resultGame++;
+        cards.forEach(card => card.addEventListener('click', clickCard))
+    }, 500)
 
     }
+    console.log(resultGame)
 }
 
-// const init = function () {
-//     cards.forEach(card => {
-//         let index = Math.floor(Math.random() * cardsClass.length);
-//         card.classList.add(cardsClass[index]);
-//         cardsClass.splice(index, 1);
-//     });
-
-//     setTimeout(() => {
-//         cards.forEach(card => {
-//             card.classList.add('hidden');
-//             card.addEventListener('click', clickCard);
-//         })
-//     }, 1000);
-// }
-
-const btn = document.querySelector("button.start");
-const span = document.querySelector("span");
-let time = 0.00;
-let idI
-
-btn.addEventListener("click", function () {
-    cards.forEach(card => {
-        let index = Math.floor(Math.random() * cardsClass.length);
-        card.classList.add(cardsClass[index]);
-        cardsClass.splice(index, 1);
-    });
-
-    idI = setInterval(() => {
-        time += 0.01;
-        span.innerHTML = `${time.toFixed(2)} sec`;
-    }, 10)
-
-    setTimeout(() => {
+const init = function(){
         cards.forEach(card => {
-            card.classList.add('hidden');
-            card.addEventListener('click', clickCard);
+            let position = Math.floor(Math.random() * cardsClass.length);
+            card.classList.add(cardsClass[position]);
+            cardsClass.splice(position,1)
+        });
 
-        })
+        setTimeout(()=> {
+            cards.forEach(card => {
+                card.classList.add("hidden");
+                card.addEventListener("click", clickCard)
+            });
+            
+        }, 2000)
+    
+}
 
-    }, 2000);
-});
+init()
