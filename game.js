@@ -29,14 +29,14 @@ const clickCard = function () {
                 activeCards.forEach(card => card.classList.add('off'));
                 cards = cards.filter(card => !card.classList.contains("off"));
                 gameResult++;
-                if (gameResult === finishGame) return clearInterval(idI)
-     
+                     
             } else {
                 activeCards.forEach(card => card.classList.add('hidden'));
             }
               activeCards.length = 0;
               activeCard = '';
               cards.forEach(card => card.addEventListener('click', clickCard));
+              if (gameResult === finishGame) return clearInterval(idI)
         }, 500);
 
     }
