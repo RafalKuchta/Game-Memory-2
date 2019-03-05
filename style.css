@@ -34,6 +34,17 @@ section div {
     section div {
         flex-basis: 33.3%;
     }
+    header {
+        display: block;
+        height: 100px;
+    }
+
+    header button.btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 80px;
+        font-size: 30px;
+    }
 }
 
 .red {
