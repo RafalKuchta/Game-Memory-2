@@ -36,7 +36,6 @@ const clickCard = function () {
               activeCards.length = 0;
               activeCard = '';
               cards.forEach(card => card.addEventListener('click', clickCard));
-              if (gameResult === finishGame) return clearInterval(idI)
         }, 500);
 
     }
