@@ -37,16 +37,16 @@ section div {
 
 @media (orientation: portrait){
     section div {
-        flex-basis: 33.3%;
+        flex-basis: 20%;
     }
     header {
         display: block;
-        height: 5vh;
+        height: 10vh;
     }
+
     
-    body{
-        height: 90vh
-       } 
+
+
 
     header button.btn {
         display: block;
