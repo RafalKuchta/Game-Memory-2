@@ -37,10 +37,10 @@ section div {
 
 @media (orientation: portrait){
     section div {
-        flex-basis: 20%;
+        flex-basis: 33.33%;
     }
     header {
-        display: block;
+        display: none;
         height: 10vh;
     }
 
