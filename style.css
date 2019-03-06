@@ -24,7 +24,7 @@ header button.btn {
 section {
     display: flex;
     flex-wrap: wrap;
-    height: 90vh;
+    height: 85vh;
     width: 100%;
 }
 
@@ -41,7 +41,7 @@ section div {
     }
     header {
         display: block;
-        height: 7vh;
+        height: 10vh;
     }
 
     header button.btn {
