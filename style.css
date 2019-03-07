@@ -55,6 +55,12 @@ section div {
     section {
         height: 100vh;
 }
+    
+    section div {
+    flex-basis: 15%;
+    flex-grow: 1;
+    haight: 100vh;
+}
 
 .red {
     background-color: red;
