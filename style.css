@@ -44,6 +44,7 @@ section div {
     section div {
         flex-basis: 33.33%;
     }
+    
     header {
         display: none;
         height: 10vh;
