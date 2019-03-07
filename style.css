@@ -45,15 +45,15 @@ section div {
     }
 
     
-
-
-
     header button.btn {
         display: none;
         padding-left:40px;
         padding-right:40px;
         font-size: 1.5rem;
     }
+    
+    section {
+        height: 100vh;
 }
 
 .red {
