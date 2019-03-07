@@ -36,6 +36,11 @@ section div {
 }
 
 @media (orientation: portrait){
+    
+        section {
+        height: 100vh;
+}
+    
     section div {
         flex-basis: 33.33%;
     }
@@ -51,15 +56,7 @@ section div {
         padding-right:40px;
         font-size: 1.5rem;
     }
-    
-    section {
-        height: 100vh;
-}
-    
-    section div {
-    flex-basis: 15%;
-    flex-grow: 1;
-    haight: 100vh;
+       
 }
 
 .red {
